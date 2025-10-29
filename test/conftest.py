@@ -13,22 +13,3 @@ def browser():
     yield driver
 
     driver.quit()  # Закрываем браузер после теста
-
-
-def test_github_web(browser):
-    url = "https://github.com/"
-    browser.get(url)
-
-    assert (
-        browser.title
-        == "GitHub · Build and ship software on a single, collaborative platform · GitHub"
-    )
-    assert browser.current_url == url
-
-
-def test_google_web(browser):
-    url = "https://www.google.com/"
-    browser.get(url)
-
-    assert browser.title == "Google"
-    assert browser.current_url == url
