@@ -19,21 +19,16 @@ def test_github_web(browser):
     url = "https://github.com/"
     browser.get(url)
 
-    assert browser.title == "GitHub · Build and ship software on a single, collaborative platform · GitHub"
+    assert (
+        browser.title
+        == "GitHub · Build and ship software on a single, collaborative platform · GitHub"
+    )
     assert browser.current_url == url
 
 
-print("Привет, README!")
+def test_google_web(browser):
+    url = "https://www.google.com/"
+    browser.get(url)
 
-text = "Lorem Ipsum — это текст-«рыба», часто используемый в печати и веб-дизайне. Lorem Ipsum"
-
-def add(a, b):
-    return a + b
-
-def greet(name):
-    print("Привет, " + name)
-
-numbers = [1, 2, 3, 4, 5]
-
-greet("мир")        # вызов функции greet
-print(add(2, 2))    # вызов функции add и вывод результата
+    assert browser.title == "Google"
+    assert browser.current_url == url
